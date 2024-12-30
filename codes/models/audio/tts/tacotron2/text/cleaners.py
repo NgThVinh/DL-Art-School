@@ -84,8 +84,8 @@ def transliteration_cleaners(text):
 
 def english_cleaners(text):
   '''Pipeline for English text, including number and abbreviation expansion.'''
-  text = ViCleaner.clean_text(text)
+  text = ViCleaner(text).clean()
   # text = lowercase(text)
-  text = collapse_whitespace(text)
+  # text = collapse_whitespace(text)
   text = text.replace('"', '')
   return text
